@@ -1,0 +1,59 @@
+<div class="container my-5">
+  <h2>Kayıt Ol</h2>
+  <form (ngSubmit)="register()">
+    <div class="mb-3">
+      <label for="firstName" class="form-label">Ad</label>
+      <input type="text" class="form-control" id="firstName" [(ngModel)]="user.firstName" name="firstName"
+        required (blur)="handleInput('firstName')">
+      <div *ngIf="submitted && touched.firstName && !user.firstName.trim()" class="text-danger">Ad zorunludur.</div>
+    </div>
+    <div class="mb-3">
+      <label for="lastName" class="form-label">Soyad</label>
+      <input type="text" class="form-control" id="lastName" [(ngModel)]="user.lastName" name="lastName" required
+        (blur)="handleInput('lastName')">
+      <div *ngIf="submitted && touched.lastName && !user.lastName.trim()" class="text-danger">Soyad zorunludur.</div>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" [(ngModel)]="user.email" name="email" required
+        (blur)="handleInput('email')">
+      <div *ngIf="submitted && touched.email && !user.email.trim()" class="text-danger">Email zorunludur.</div>
+      <div *ngIf="submitted && touched.email && !isValidEmail()" class="text-danger">Geçerli bir email adresi girin.</div>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Şifre</label>
+      <input type="password" class="form-control" id="password" [(ngModel)]="user.password" name="password" required
+        (blur)="handleInput('password')">
+      <div *ngIf="submitted && touched.password && !user.password.trim()" class="text-danger">Şifre zorunludur.</div>
+      <div *ngIf="submitted && touched.password && !isValidPassword()" class="text-danger">Şifre en az 6, en fazla 50 karakter uzunluğunda olmalıdır.</div>
+    </div>
+    <div class="mb-3">
+      <label for="gender" class="form-label">Cinsiyet</label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="erkekGender" value="Erkek" [(ngModel)]="user.gender" name="gender"
+          required (blur)="handleInput('gender')">
+        <label class="form-check-label" for="erkekGender">Erkek</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="kadinGender" value="Kadın" [(ngModel)]="user.gender" name="gender"
+          required (blur)="handleInput('gender')">
+        <label class="form-check-label" for="kadinGender">Kadın</label>
+      </div>
+      <div *ngIf="submitted && touched.gender && !user.gender" class="text-danger">Cinsiyet zorunludur.</div>
+    </div>
+    
+    <div class="mb-3">
+      <label for="phone" class="form-label">Telefon</label>
+      <input type="tel" class="form-control" id="phone" [(ngModel)]="user.phone" name="phone" required
+        (blur)="handleInput('phone')">
+      <div *ngIf="submitted && touched.phone && !user.phone.trim()" class="text-danger">Telefon zorunludur.</div>
+    </div>
+    <div class="mb-3">
+      <label for="birthdate" class="form-label">Doğum Tarihi</label>
+      <input type="date" class="form-control" id="birthdate" [(ngModel)]="user.birthdate" name="birthdate" required
+        (blur)="handleInput('birthdate')">
+      <div *ngIf="submitted && touched.birthdate && !user.birthdate.trim()" class="text-danger">Doğum tarihi zorunludur.</div>
+    </div>
+    <button type="submit" class="btn btn-primary">Kayıt Ol</button>
+  </form>
+</div>

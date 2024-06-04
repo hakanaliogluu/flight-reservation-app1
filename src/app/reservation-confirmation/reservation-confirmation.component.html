@@ -1,0 +1,12 @@
+<div class="container my-5">
+    <h2 class="mb-4">Rezervasyon Onayı</h2>
+    <ul class="list-group">
+      <li class="list-group-item">Uçuş No: {{ reservation.flight.number }}</li>
+      <li class="list-group-item">Fiyat: {{ reservation.flight.price }} TL</li>
+      <li class="list-group-item">Ad: {{ reservation.passengerDetails.name }}</li>
+      <li class="list-group-item">Soyad: {{ reservation.passengerDetails.surname }}</li>
+      <li class="list-group-item">Email: {{ reservation.passengerDetails.email }}</li>
+      <li class="list-group-item">Telefon: {{ reservation.passengerDetails.phone }}</li>
+    </ul>
+  </div>
+  

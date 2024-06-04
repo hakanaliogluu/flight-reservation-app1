@@ -1,0 +1,23 @@
+.custom-navbar {
+  padding: 1rem 2rem; /* Navbar'ın yüksekliği ve iç boşlukları */
+}
+
+.navbar-brand {
+  font-size: 1.5rem; /* Marka adının boyutu */
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.2rem; /* Navbar linklerinin boyutu */
+  margin-right: 1rem; /* Linkler arası boşluk */
+}
+
+.container {
+  margin-top: 80px; /* Navbar'ın yüksekliğine göre ayarlandı */
+}
+
+.navbar.fixed-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030;
+}

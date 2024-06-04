@@ -1,0 +1,22 @@
+<div class="container my-5">
+  <h2 class="mb-4">Rezervasyon Detayları</h2>
+  <form (ngSubmit)="completeReservation()">
+    <div class="mb-3">
+      <label for="name" class="form-label">Ad</label>
+      <input id="name" class="form-control" [(ngModel)]="passengerDetails.name" name="name" required>
+    </div>
+    <div class="mb-3">
+      <label for="surname" class="form-label">Soyad</label>
+      <input id="surname" class="form-control" [(ngModel)]="passengerDetails.surname" name="surname" required>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input id="email" class="form-control" type="email" [(ngModel)]="passengerDetails.email" name="email" required>
+    </div>
+    <div class="mb-3">
+      <label for="phone" class="form-label">Telefon</label>
+      <input id="phone" class="form-control" [(ngModel)]="passengerDetails.phone" name="phone" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Rezervasyonu Tamamla</button>
+  </form>
+</div>

@@ -1,0 +1,26 @@
+<div class="container my-5">
+  <h2 class="mb-4">Uçuş Ara</h2>
+  <form (ngSubmit)="searchFlights()" class="needs-validation" novalidate>
+    <div class="form-group">
+      <label for="from">Kalkış Noktası:</label>
+      <input id="from" [(ngModel)]="searchCriteria.from" name="from" class="form-control" required>
+      <div class="invalid-feedback">Lütfen kalkış noktasını girin.</div>
+    </div>
+    <div class="form-group">
+      <label for="to">Varış Noktası:</label>
+      <input id="to" [(ngModel)]="searchCriteria.to" name="to" class="form-control" required>
+      <div class="invalid-feedback">Lütfen varış noktasını girin.</div>
+    </div>
+    <div class="form-group">
+      <label for="date">Tarih:</label>
+      <input id="date" type="date" [(ngModel)]="searchCriteria.date" name="date" class="form-control" required>
+      <div class="invalid-feedback">Lütfen tarihi girin.</div>
+    </div>
+    <div class="form-group">
+      <label for="passengers">Yolcu Sayısı:</label>
+      <input id="passengers" type="number" [(ngModel)]="searchCriteria.passengers" name="passengers" class="form-control" required>
+      <div class="invalid-feedback">Lütfen yolcu sayısını girin.</div>
+    </div>
+    <button type="submit" class="btn btn-success">Ara</button>
+  </form>
+</div>

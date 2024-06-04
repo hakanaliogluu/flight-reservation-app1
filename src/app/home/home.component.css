@@ -1,0 +1,22 @@
+.welcome-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('src\assets\background.jpg'); /* Arka plan resminizin yolu */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+
+.welcome-content {
+  text-align: center;
+  color: white; /* Yazı rengini resminize göre ayarlayın */
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 280px;
+}
