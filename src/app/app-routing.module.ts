@@ -7,6 +7,7 @@ import { ReservationDetailsComponent } from './reservation-details/reservation-d
 import { ReservationConfirmationComponent } from './reservation-confirmation/reservation-confirmation.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { MyReservationsComponent } from './my-reservations/my-reservations.component'; // Ekledik
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'details', component: ReservationDetailsComponent },
   { path: 'confirmation', component: ReservationConfirmationComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent }
+  { path: 'register', component: RegisterComponent },
+  { path: 'my-reservations', component: MyReservationsComponent } // Eklendi
 ];
 
 @NgModule({

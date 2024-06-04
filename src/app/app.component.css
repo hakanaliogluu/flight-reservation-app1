@@ -21,3 +21,12 @@
   width: 100%;
   z-index: 1030;
 }
+
+/* Navbar'daki butonların sağa hizalanması için */
+.navbar-nav {
+  margin-left: auto;
+}
+
+.navbar-nav .nav-item {
+  margin-right: 1rem;
+}

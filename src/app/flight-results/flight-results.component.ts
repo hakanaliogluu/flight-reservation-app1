@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
 })
 export class FlightResultsComponent implements OnInit {
   flights = [
-    { id: 1, number: 'TK101', price: 500 },
-    { id: 2, number: 'TK102', price: 600 }
+    { id: 1, number: 'TK101', price: 500, time: '10:00' },
+    { id: 2, number: 'TK102', price: 600, time: '12:00' }
   ];
 
   constructor(private router: Router) {}

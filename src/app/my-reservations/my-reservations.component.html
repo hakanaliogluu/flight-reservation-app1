@@ -1,0 +1,15 @@
+<div class="container my-5">
+    <h2 class="mb-4">Rezervasyonlarım</h2>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let reservation of reservations; let i = index">
+        <h5>Uçuş No: {{ reservation.flight.number }}</h5>
+        <p>Fiyat: {{ reservation.flight.price }} TL</p>
+        <p>Ad: {{ reservation.passengerDetails.name }}</p>
+        <p>Soyad: {{ reservation.passengerDetails.surname }}</p>
+        <p>Email: {{ reservation.passengerDetails.email }}</p>
+        <p>Telefon: {{ reservation.passengerDetails.phone }}</p>
+        <button class="btn btn-danger" (click)="cancelReservation(i)">Rezervasyonu İptal Et</button>
+      </li>
+    </ul>
+  </div>
+  

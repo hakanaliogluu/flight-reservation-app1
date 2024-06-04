@@ -1,26 +1,34 @@
 <div class="container my-5">
   <h2 class="mb-4">Uçuş Ara</h2>
-  <form (ngSubmit)="searchFlights()" class="needs-validation" novalidate>
+  <form (ngSubmit)="searchFlights()" class="needs-validation" #flightSearchForm="ngForm" novalidate>
     <div class="form-group">
       <label for="from">Kalkış Noktası:</label>
-      <input id="from" [(ngModel)]="searchCriteria.from" name="from" class="form-control" required>
-      <div class="invalid-feedback">Lütfen kalkış noktasını girin.</div>
+      <select id="from" [(ngModel)]="searchCriteria['from']" name="from" class="form-control" required>
+        <option value="" disabled selected>Lütfen bir kalkış noktası seçin</option>
+        <option value="İstanbul">İstanbul</option>
+        <option value="Berlin">Berlin</option>
+      </select>
+      <div *ngIf="flightSearchForm.controls['from'].invalid && flightSearchForm.controls['from'].touched" class="invalid-feedback">Lütfen kalkış noktasını seçin.</div>
     </div>
     <div class="form-group">
       <label for="to">Varış Noktası:</label>
-      <input id="to" [(ngModel)]="searchCriteria.to" name="to" class="form-control" required>
-      <div class="invalid-feedback">Lütfen varış noktasını girin.</div>
+      <select id="to" [(ngModel)]="searchCriteria['to']" name="to" class="form-control" required>
+        <option value="" disabled selected>Lütfen bir varış noktası seçin</option>
+        <option value="İstanbul">İstanbul</option>
+        <option value="Berlin">Berlin</option>
+      </select>
+      <div *ngIf="flightSearchForm.controls['to'].invalid && flightSearchForm.controls['to'].touched" class="invalid-feedback">Lütfen varış noktasını seçin.</div>
     </div>
     <div class="form-group">
       <label for="date">Tarih:</label>
-      <input id="date" type="date" [(ngModel)]="searchCriteria.date" name="date" class="form-control" required>
-      <div class="invalid-feedback">Lütfen tarihi girin.</div>
+      <input id="date" type="date" [(ngModel)]="searchCriteria['date']" name="date" class="form-control" required>
+      <div *ngIf="flightSearchForm.controls['date'].invalid && flightSearchForm.controls['date'].touched" class="invalid-feedback">Lütfen tarihi girin.</div>
     </div>
     <div class="form-group">
       <label for="passengers">Yolcu Sayısı:</label>
-      <input id="passengers" type="number" [(ngModel)]="searchCriteria.passengers" name="passengers" class="form-control" required>
-      <div class="invalid-feedback">Lütfen yolcu sayısını girin.</div>
+      <input id="passengers" type="number" [(ngModel)]="searchCriteria['passengers']" name="passengers" class="form-control" required readonly>
+      <div *ngIf="flightSearchForm.controls['passengers'].invalid && flightSearchForm.controls['passengers'].touched" class="invalid-feedback">Yolcu sayısını değiştiremezsiniz.</div>
     </div>
-    <button type="submit" class="btn btn-success">Ara</button>
+    <button type="submit" [disabled]="flightSearchForm.invalid" class="btn btn-success btn-block">Ara</button>
   </form>
 </div>

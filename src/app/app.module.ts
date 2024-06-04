@@ -10,6 +10,7 @@ import { ReservationConfirmationComponent } from './reservation-confirmation/res
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { MyReservationsComponent } from './my-reservations/my-reservations.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RegisterComponent } from './register/register.component';
     ReservationDetailsComponent,
     ReservationConfirmationComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    MyReservationsComponent
   ],
   imports: [
     BrowserModule,

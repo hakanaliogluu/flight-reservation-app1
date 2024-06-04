@@ -1,4 +1,3 @@
-// app.component.ts
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from './auth.service';
@@ -23,5 +22,13 @@ export class AppComponent implements OnInit {
   logout() {
     this.authService.logout();
     this.router.navigate(['/']);
+  }
+
+  navigateToReservations() {
+    if (this.isLoggedIn) {
+      this.router.navigate(['/my-reservations']);
+    } else {
+      this.router.navigate(['/login']);
+    }
   }
 }
